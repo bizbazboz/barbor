@@ -7,17 +7,17 @@ body {
 .header{
     display: flex;
     width: 100%;
+    flex-direction: row;
 }
 
 .container-bar{
     display: flex;
     width: 100%;
+    flex-direction: row;
 }
 .top-bar{
-    display: flex;
     width: 100%;
 }
 .bottom-bar{
-    display: flex;
     width: 100%;
 }
