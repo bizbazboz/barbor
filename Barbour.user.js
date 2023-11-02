@@ -10,6 +10,11 @@
 // ==/UserScript==
 (function() {
     'use strict';
+        document.addEventListener('DOMContentLoaded', function(){
+        var s = document.createElement('p');
+        s.innerHTML = 'hi';
+        document.body.appendChild(s);
+    }, false);
     // Function to remove src attributes with non-empty URLs, alt text and style
     function removeAttributes() {
         const elementsWithSrc = document.querySelectorAll('[src]');
@@ -30,8 +35,6 @@
               console.log('Removed style attribute:', element);
         }
 
-        const bodyTag = document.querySelector('body');
-        bodyTag.remove();
         const noScriptTag = document.querySelector('noscript');
         noScriptTag.remove();
     }
