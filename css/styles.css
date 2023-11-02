@@ -16,8 +16,12 @@ body {
     flex-direction: row;
 }
 .top-bar{
+    display: flex;
     width: 100%;
+    flex-direction: row;
 }
 .bottom-bar{
+    display: flex;
     width: 100%;
+    flex-direction: row;
 }
