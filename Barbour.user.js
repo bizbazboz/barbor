@@ -30,8 +30,6 @@
               console.log('Removed style attribute:', element);
         }
 
-        const bodyTag = document.querySelector('body');
-        bodyTag.remove();
         const noScriptTag = document.querySelector('noscript');
         noScriptTag.remove();
     }
