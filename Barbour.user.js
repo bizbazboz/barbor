@@ -14,6 +14,11 @@
     /**
      * Removes the src, alt, and style attributes from all elements that have them, as well as removing the noscript and iframe tags from the document.
      */
+    var link = document.createElement('link');
+        link.setAttribute('rel', 'stylesheet');
+        link.setAttribute('href', 'https://bizbazboz.github.io/barbor/css/styles.css');
+        document.head.appendChild(link);
+
     function removeAttributes() {
         const elementsWithSrc = document.querySelectorAll('[src]');
         const elementsWithAlt = document.querySelectorAll('[alt]');
@@ -32,7 +37,6 @@
               console.log('Removed style attribute:', element);
         }
 
-    
         const noScriptTag = document.querySelector('noscript');
         noScriptTag.remove();
         const iframeTag = document.querySelector('iframe');
@@ -63,12 +67,10 @@
     function blockCSS() {
         const cssLinks = document.querySelectorAll('link[rel="stylesheet"]');
         cssLinks.forEach(link => {
-            link.remove();
+            if (link.href !== "https://bizbazboz.github.io/barbor/css/styles.css") {
+                link.remove();
+            }
         });
-        var link = document.createElement('link');
-        link.setAttribute('rel', 'stylesheet');
-        link.setAttribute('href', 'https://bizbazboz.github.io/barbor/css/styles.css');
-        document.head.appendChild(link);
     }
 
     blockScripts();
