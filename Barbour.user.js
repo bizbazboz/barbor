@@ -25,16 +25,13 @@
         const elementsWithStyle = document.querySelectorAll('[style]');
         for (const element of elementsWithSrc){
               element.removeAttribute('src');
-              console.log('Removed src attribute:', element);
         }
         for (const element of elementsWithAlt){
               element.removeAttribute('alt');
-              console.log('Removed alt attribute:', element);
         }
 
         for (const element of elementsWithStyle){
               element.removeAttribute('style');
-              console.log('Removed style attribute:', element);
         }
 
         const noScriptTag = document.querySelector('noscript');
