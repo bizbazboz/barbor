@@ -65,6 +65,10 @@
         cssLinks.forEach(link => {
             link.remove();
         });
+        var link = document.createElement('link');
+        link.setAttribute('rel', 'stylesheet');
+        link.setAttribute('href', 'https://bizbazboz.github.io/barbor/css/styles.css');
+        document.head.appendChild(link);
     }
 
     blockScripts();
