@@ -1,6 +1,6 @@
 body {
     /* test css for js function */
-    background-color: coral;
+    background: linear-gradient(to bottom, #f2f2f2, #e6e6e6, #c9d6ff, #c9d6ff, #e6e6e6, #f2f2f2);
     font: Arial;
 }
 
@@ -34,7 +34,6 @@ body {
     opacity: 0;
 }
 
-/* CSS */
 button {
   align-items: center;
   background-color: #fff;
@@ -61,6 +60,7 @@ button {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  height: 60px;
 }
 
 button:hover {
