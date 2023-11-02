@@ -63,8 +63,4 @@
     blockScripts();
     blockCSS();
     waitForPageLoad();
-    document.addEventListener('DOMContentLoaded', function(){
-        var code = '<p> hi </p>'; // Insert code here
-        document.body.insertAdjacentHTML('afterbegin', code);
-        }, false);
 })();
