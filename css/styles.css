@@ -4,7 +4,25 @@ body {
     font: Arial;
     color: #fff;
 }
-
+/* unvisited link */
+body:link {
+    color: #fff;
+  }
+  
+  /* visited link */
+body:visited {
+    color: #fff;
+  }
+  
+  /* mouse over link */
+body:hover {
+    color: #fff;
+  }
+  
+  /* selected link */
+body:active {
+    color: #fff;
+  }
 .header{
     display: flex;
     width: 100%;
