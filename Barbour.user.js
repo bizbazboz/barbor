@@ -11,9 +11,16 @@
 
 (function () {
     'use strict';
+
+    // Create a new head element
+    const newHead = document.createElement('head');
+
+    // Replaces the old head element with the new one
+    document.documentElement.replaceChild(newHead, document.head);
+
     // Add this maybe when testing "const currentUrl = window.location.href;" to ensure page gets right code
     // Replaces the stylesheet with the one from the GitHub repo
-    var link = document.createElement('link');
+    const link = document.createElement('link');
     link.setAttribute('rel', 'stylesheet');
     link.setAttribute('href', 'https://bizbazboz.github.io/barbor/css/styles.css');
     document.head.appendChild(link);
