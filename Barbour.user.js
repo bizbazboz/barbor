@@ -32,8 +32,8 @@
     
         const noScriptTag = document.querySelector('noscript');
         noScriptTag.remove();
-        const DocTag = document.querySelector('#document');
-        DocTag.remove();
+        const iframeTag = document.querySelector('iframe');
+        iframeTag.remove();
     }
 
     // Wait for the page to load and then remove src attributes with URLs, alt text and style
