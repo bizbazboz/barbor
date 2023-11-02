@@ -2,36 +2,38 @@
 // @name         Better Arbor
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  A script to make arbor look better!
+// @description  A script to make Arbor look better!
 // @author       bizbazboz, OomsOoms
 // @match        https://bishop-ramsey-cofe.uk.arbor.sc/?/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=arbor-education.com
 // @grant        none
 // ==/UserScript==
-(function() {
-    'use strict';
-    // Function to remove src attributes with non-empty URLs, alt text and style
-    /**
-     * Removes the src, alt, and style attributes from all elements that have them, as well as removing the noscript and iframe tags from the document.
-     */
-    var link = document.createElement('link');
-        link.setAttribute('rel', 'stylesheet');
-        link.setAttribute('href', 'https://bizbazboz.github.io/barbor/css/styles.css');
-        document.head.appendChild(link);
 
+(function () {
+    'use strict';
+
+    // Replaces the stylesheet with the one from the GitHub repo
+    var link = document.createElement('link');
+    link.setAttribute('rel', 'stylesheet');
+    link.setAttribute('href', 'https://bizbazboz.github.io/barbor/css/styles.css');
+    document.head.appendChild(link);
+
+    // Function to remove src attributes with non-empty URLs, alt text and style
+    // Removes the src, alt, and style attributes from all elements that have them, as well as removing the noscript and iframe tags from the document.
     function removeAttributes() {
         const elementsWithSrc = document.querySelectorAll('[src]');
         const elementsWithAlt = document.querySelectorAll('[alt]');
         const elementsWithStyle = document.querySelectorAll('[style]');
-        for (const element of elementsWithSrc){
-              element.removeAttribute('src');
+
+        for (const element of elementsWithSrc) {
+            element.removeAttribute('src');
         }
-        for (const element of elementsWithAlt){
-              element.removeAttribute('alt');
+        for (const element of elementsWithAlt) {
+            element.removeAttribute('alt');
         }
 
-        for (const element of elementsWithStyle){
-              element.removeAttribute('style');
+        for (const element of elementsWithStyle) {
+            element.removeAttribute('style');
         }
 
         const noScriptTag = document.querySelector('noscript');
@@ -48,29 +50,25 @@
             loadingSpinnerTxt.remove();
             removeAttributes();
         } else {
+            // If the loading spinner is still there, wait 100ms and try again
             setTimeout(waitForPageLoad, 100);
         }
     }
 
     // Function to block all <script> tags
-    function blockScripts() {
-        const scripts = document.querySelectorAll('script');
-        scripts.forEach(script => {
-            script.remove();
-        });
-    }
+    const scripts = document.querySelectorAll('script');
+    scripts.forEach(script => {
+        script.remove();
+    });
 
     // Function to block all <link> tags with rel="stylesheet" (CSS)
-    function blockCSS() {
-        const cssLinks = document.querySelectorAll('link[rel="stylesheet"]');
-        cssLinks.forEach(link => {
-            if (link.href !== "https://bizbazboz.github.io/barbor/css/styles.css") {
-                link.remove();
-            }
-        });
-    }
+    const cssLinks = document.querySelectorAll('link[rel="stylesheet"]');
+    cssLinks.forEach(link => {
+        if (link.href !== "https://bizbazboz.github.io/barbor/css/styles.css") {
+            link.remove();
+        }
+    });
 
-    blockScripts();
-    blockCSS();
+    // Runs the functions after the loading spinner has been hidden
     waitForPageLoad();
 })();
