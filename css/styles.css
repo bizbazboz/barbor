@@ -1,5 +1,9 @@
 body {
     /* test css for js function */
     background-color: coral;
-    font-family: cursive;
+    font: Arial;
+}
+
+.presentation{
+    display: flex;
 }
