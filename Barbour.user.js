@@ -10,11 +10,6 @@
 // ==/UserScript==
 (function() {
     'use strict';
-        document.addEventListener('DOMContentLoaded', function(){
-        var s = document.createElement('p');
-        s.innerHTML = 'hi';
-        document.body.appendChild(s);
-    }, false);
     // Function to remove src attributes with non-empty URLs, alt text and style
     function removeAttributes() {
         const elementsWithSrc = document.querySelectorAll('[src]');
@@ -68,4 +63,8 @@
     blockScripts();
     blockCSS();
     waitForPageLoad();
+    document.addEventListener('DOMContentLoaded', function(){
+        var code = '<p> hi </p>'; // Insert code here
+        document.body.insertAdjacentHTML('afterbegin', code);
+        }, false);
 })();
