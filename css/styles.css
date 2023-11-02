@@ -2,12 +2,14 @@ body {
     /* test css for js function */
     background: #a09dff;
     font: Arial;
+    color: #fff;
 }
 
 .header{
     display: flex;
     width: 100%;
     flex-direction: row;
+    outline: none;
 }
 
 .container-bar{
