@@ -1,11 +1,11 @@
 // ==UserScript==
-// @name         AntiArbor
+// @name         Better Arbor
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  try to take over the world!
-// @author       You
-// @match        https://bishop-ramsey-cofe.uk.arbor.sc/?/*/*
-// @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+// @author       bizbazboz, OomsOoms
+// @match        https://bishop-ramsey-cofe.uk.arbor.sc/?/*
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=arbor.sc
 // @grant        none
 // ==/UserScript==
 (function() {
@@ -41,5 +41,23 @@
         }
     }
 
+    // Function to block all <script> tags
+    function blockScripts() {
+        const scripts = document.querySelectorAll('script');
+        scripts.forEach(script => {
+            script.remove();
+        });
+    }
+
+    // Function to block all <link> tags with rel="stylesheet" (CSS)
+    function blockCSS() {
+        const cssLinks = document.querySelectorAll('link[rel="stylesheet"]');
+        cssLinks.forEach(link => {
+            link.remove();
+        });
+    }
+
+    blockScripts();
+    blockCSS();
     waitForPageLoad();
 })();
