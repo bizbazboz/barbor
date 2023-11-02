@@ -11,7 +11,7 @@
 
 (function () {
     'use strict';
-
+    // Add this maybe when testing "const currentUrl = window.location.href;" to ensure page gets right code
     // Replaces the stylesheet with the one from the GitHub repo
     var link = document.createElement('link');
     link.setAttribute('rel', 'stylesheet');
