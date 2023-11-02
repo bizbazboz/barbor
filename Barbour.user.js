@@ -2,10 +2,10 @@
 // @name         Better Arbor
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  try to take over the world!
+// @description  A script to make arbor look better!
 // @author       bizbazboz, OomsOoms
 // @match        https://bishop-ramsey-cofe.uk.arbor.sc/?/*
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=arbor.sc
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=arbor-education.com
 // @grant        none
 // ==/UserScript==
 (function() {
