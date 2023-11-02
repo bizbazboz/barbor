@@ -15,7 +15,6 @@
         const elementsWithSrc = document.querySelectorAll('[src]');
         const elementsWithAlt = document.querySelectorAll('[alt]');
         const elementsWithStyle = document.querySelectorAll('[style]');
-
         for (const element of elementsWithSrc){
               element.removeAttribute('src');
               console.log('Removed src attribute:', element);
@@ -30,8 +29,11 @@
               console.log('Removed style attribute:', element);
         }
 
+    
         const noScriptTag = document.querySelector('noscript');
         noScriptTag.remove();
+        const DocTag = document.querySelector('#document');
+        DocTag.remove();
     }
 
     // Wait for the page to load and then remove src attributes with URLs, alt text and style
