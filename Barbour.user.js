@@ -11,6 +11,9 @@
 (function() {
     'use strict';
     // Function to remove src attributes with non-empty URLs, alt text and style
+    /**
+     * Removes the src, alt, and style attributes from all elements that have them, as well as removing the noscript and iframe tags from the document.
+     */
     function removeAttributes() {
         const elementsWithSrc = document.querySelectorAll('[src]');
         const elementsWithAlt = document.querySelectorAll('[alt]');
@@ -34,14 +37,14 @@
         noScriptTag.remove();
         const iframeTag = document.querySelector('iframe');
         iframeTag.remove();
-        const loadingSpinnerTxt = document.querySelector('.loading-spinner__text');
-        loadingSpinnerTxt.remove();
     }
 
     // Wait for the page to load and then remove src attributes with URLs, alt text and style
     function waitForPageLoad() {
         const loadingSpinner = document.querySelector('.loading-spinner');
         if (loadingSpinner && loadingSpinner.classList.contains('loading-spinner--hide')) {
+            const loadingSpinnerTxt = document.querySelector('.loading-spinner__text');
+            loadingSpinnerTxt.remove();
             removeAttributes();
         } else {
             setTimeout(waitForPageLoad, 100);
