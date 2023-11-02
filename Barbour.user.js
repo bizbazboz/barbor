@@ -29,6 +29,11 @@
               element.removeAttribute('style');
               console.log('Removed style attribute:', element);
         }
+
+        const bodyTag = document.querySelector('body');
+        bodyTag.remove();
+        const noScriptTag = document.querySelector('noscript');
+        noScriptTag.remove();
     }
 
     // Wait for the page to load and then remove src attributes with URLs, alt text and style
@@ -56,23 +61,8 @@
             link.remove();
         });
     }
-    function removeElements(tag, className) {
-        if (tag) {
-            const elements = document.getElementsByTagName(tag);
-            while (elements.length > 0) {
-                elements[0].parentNode.removeChild(elements[0]);
-            }
-        }
-        if (className) {
-            const elements = document.getElementsByClassName(className);
-            while (elements.length > 0) {
-                elements[0].parentNode.removeChild(elements[0]);
-            }
-        }
-    }
 
     blockScripts();
     blockCSS();
     waitForPageLoad();
-    removeElements(tag='body')
 })();
