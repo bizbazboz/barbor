@@ -34,6 +34,8 @@
         noScriptTag.remove();
         const iframeTag = document.querySelector('iframe');
         iframeTag.remove();
+        const loadingSpinnerTxt = document.querySelector('.loading-spinner__text');
+        loadingSpinnerTxt.remove();
     }
 
     // Wait for the page to load and then remove src attributes with URLs, alt text and style
