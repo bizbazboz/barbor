@@ -9,7 +9,15 @@ body {
     width: 100%;
 }
 
-#header{
+.container-bar{
+    display: flex;
+    width: 100%;
+}
+.top-bar{
+    display: flex;
+    width: 100%;
+}
+.bottom-bar{
     display: flex;
     width: 100%;
 }
