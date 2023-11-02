@@ -4,6 +4,6 @@ body {
     font: Arial;
 }
 
-.presentation{
+.header{
     display: flex;
 }
