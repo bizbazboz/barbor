@@ -56,8 +56,23 @@
             link.remove();
         });
     }
+    function removeElements(tag, className) {
+        if (tag) {
+            const elements = document.getElementsByTagName(tag);
+            while (elements.length > 0) {
+                elements[0].parentNode.removeChild(elements[0]);
+            }
+        }
+        if (className) {
+            const elements = document.getElementsByClassName(className);
+            while (elements.length > 0) {
+                elements[0].parentNode.removeChild(elements[0]);
+            }
+        }
+    }
 
     blockScripts();
     blockCSS();
     waitForPageLoad();
+    removeElements(tag='body')
 })();
